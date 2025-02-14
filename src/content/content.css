@@ -1,0 +1,28 @@
+/* Dark mode styles */
+.dark-mode {
+  filter: invert(90%) hue-rotate(180deg);
+}
+
+.dark-mode img,
+.dark-mode video,
+.dark-mode iframe {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+/* Extension UI elements */
+.extension-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0 0 0 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.dark-mode .extension-overlay {
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+}
