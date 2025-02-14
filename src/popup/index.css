@@ -17,7 +17,6 @@ body {
   min-height: 400px;
 }
 
-/* Dark mode styles */
 .dark {
   @apply bg-gray-900 text-white;
 }
@@ -26,7 +25,6 @@ body {
   @apply rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50;
 }
 
-/* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
 }

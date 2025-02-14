@@ -1,4 +1,3 @@
-// Type definitions for content script
 interface Message {
   action: string;
   data?: any;
@@ -14,10 +13,8 @@ class ContentScript {
   private async initialize() {
     if (this.initialized) return;
 
-    // Add message listener
     chrome.runtime.onMessage.addListener(this.handleMessage.bind(this));
 
-    // Load settings
     const settings = await this.getSettings();
     this.applySettings(settings);
 
@@ -47,7 +44,7 @@ class ContentScript {
 
   private async handleScreenshot(sendResponse: (response?: any) => void) {
     try {
-      // Add any pre-screenshot preparations here
+      // happens before screenshot
       sendResponse({ success: true });
     } catch (error) {
       console.error('Screenshot error:', error);
@@ -64,7 +61,6 @@ class ContentScript {
   }
 
   private applySettings(settings: any) {
-    // Apply dark mode if enabled
     if (settings.darkMode) {
       document.documentElement.classList.add('dark-mode');
     } else {
@@ -73,5 +69,4 @@ class ContentScript {
   }
 }
 
-// Initialize content script
 new ContentScript();

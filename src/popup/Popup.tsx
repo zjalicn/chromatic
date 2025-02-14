@@ -11,12 +11,10 @@ const Popup: React.FC = () => {
   });
 
   useEffect(() => {
-    // Get current tab
     chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
       setActiveTab(tabs[0]);
     });
 
-    // Load settings
     chrome.storage.local.get(['settings'], result => {
       if (result.settings) {
         setSettings(result.settings);

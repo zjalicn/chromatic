@@ -1,11 +1,10 @@
-// Type definitions for background script
 interface BookmarkData {
   url: string;
   title: string;
   date: string;
 }
 
-// Initialize extension
+// Initialize
 chrome.runtime.onInstalled.addListener(async () => {
   const defaultSettings = {
     darkMode: false,
